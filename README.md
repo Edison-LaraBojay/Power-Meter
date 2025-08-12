@@ -1,1 +1,1 @@
-"Running Power Meter for Zone Training" 
+Running Power Meter for Zone Training
