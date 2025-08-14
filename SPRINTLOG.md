@@ -1,7 +1,7 @@
 # Sprint Backlog
 
 ## Sprint 1
-Committed: S1, S2
+Committed: S1, S2\n 
 Reach Goal: Begin work on S3
 User Story S1: As a runner, I want to see cadence calculated from vertical acceleration from logged data (not live)
 User Story S2: As a runner, I want to see altitude change from logged data (not live)
