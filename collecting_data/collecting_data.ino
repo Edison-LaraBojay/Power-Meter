@@ -16,25 +16,25 @@ float gx, gy, gz;
 
 
 void setup() {
-  Serial.begin(9600);
-  while (!Serial); // waits
+  //Serial.begin(9600);
+  //while (!Serial); // waits
 
   if (!IMU.begin()){ // from arduino doc, ensures IMU initializes
-    Serial.println("Failued to initialize IMU");
+    //Serial.println("Failued to initialize IMU");
     while (1);
   }
 
   if (!BLE.begin()){
-    Serial.println("starting BLE failed!");
+    //Serial.println("starting BLE failed!");
     while (1);
   }
 
 
 
   // some data
-  Serial.print("Accelerometer sample rate = ");
-  Serial.print(IMU.accelerationSampleRate());
-  Serial.println(" Hz");
+  //Serial.print("Accelerometer sample rate = ");
+  //Serial.print(IMU.accelerationSampleRate());
+  //Serial.println(" Hz");
 
   BLE.setLocalName("Nano33_IMU");
   BLE.setAdvertisedService(imuService);
@@ -42,7 +42,7 @@ void setup() {
   BLE.addService(imuService);
   BLE.advertise();
 
-  Serial.println("BLE IMU device active, waiting for connections");
+  //Serial.println("BLE IMU device active, waiting for connections");
   
 
 }
