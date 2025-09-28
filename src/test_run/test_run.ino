@@ -45,8 +45,6 @@ struct Step {
 };
 
 imuFilter filter;
-filter.begin(1.0/60.0, 0.1f);
-
 // 
 int stepLength = 10;
 int currentStepIndex;
@@ -56,6 +54,8 @@ Step steps[10];
 void setup() {
   Serial.begin(9600);
   while (!Serial); // waits
+
+  filter.begin(1.0/60.0, 0.1f);
 
   if (!IMU.begin()){ // from arduino doc, ensures IMU initializes
     Serial.println("Failued to initialize IMU");
@@ -320,8 +320,8 @@ void loop() {
     float roll = filter.getRoll();
     float pitch = filter.getPitch();
     float yaw = filter.getYaw();
-    
-    Step currentStep = detect_step(filteredData, times, currentIndex, COEFFICIENT_LENGTH, risingTime, fallingTime, previousRisingTime, previousStepTime, samplePeriod, currentAmplitude, previousAmplitude, minValue, maxValue);
+
+    //Step currentStep = detect_step(filteredData, times, currentIndex, COEFFICIENT_LENGTH, risingTime, fallingTime, previousRisingTime, previousStepTime, samplePeriod, currentAmplitude, previousAmplitude, minValue, maxValue);
 
     if (currentStep.isRunning || currentStep.isWalking){
       //Serial.println("WALK OR RUN");
